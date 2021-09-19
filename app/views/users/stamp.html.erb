@@ -1,0 +1,30 @@
+<h2 class='animate__jackInTheBox'>現在、あなたは<%= @points %>ポイント持っています。</h2>
+<% if @can_do > 0 %>
+  <label>あなたはガチャを<%= @can_do %>回引くことができます。</label>
+  <p><%= link_to 'ガチャを引く', new_pokemon_path %>
+<% end %>
+<%= link_to 'やることリストに戻る', todos_path %>
+
+<table border='1'>
+  <% stamps = @points-@can_do*10 %>
+  <% if stamps > 5 %>
+    <tr>
+      <td>◯</td><td>◯</td><td>◯</td><td>◯</td><td>◯</td>
+    </tr>
+    <tr>
+      <% (stamps-5).times do %>
+        <td>◯</td>
+      <% end %>
+    </tr>
+  <% else %>
+    <tr>
+      <% stamps.times do %>
+        <td>◯</td>
+      <% end %>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td><td></td><td></td>
+    </tr>
+  <% end %>
+
+</table>

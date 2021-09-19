@@ -21,12 +21,17 @@ class TodosController < ApplicationController
 
   def destroy
     todo = Todo.find(todo_params_id[:id])
-    if todo.destroy
-      flash[:success] = '正しく削除されました。'
-      redirect_to todos_path
+    current_user.update(points: current_user.points + todo.priority)
+    if current_user.save
+      if todo.destroy
+        flash[:success] = '正しく削除されました。'
+        redirect_to todos_path
+      else
+        flash[:danger] = '削除されませんでした。'
+        redirect_to todos_path
+      end
     else
-      flash[:danger] = '削除されませんでした。'
-      redirect_to todos_path
+      flash[:danger] = 'ポイントが適切に更新されませんでした。' 
     end
   end
 

@@ -1,11 +1,11 @@
 <h1>やること一覧</h1>
 <table class='table-set'>
   <tr>
-    <th>タスク名</th>
-    <th>メモ</th>
-    <th>優先度</th>
-    <th>期日</th>
-    <th>成長ボタン</th>
+    <th width='25%'>タスク名</th>
+    <th width='40%'>メモ</th>
+    <th width='10%'>優先度</th>
+    <th width='20%'>期日</th>
+    <th width='5%'>成長ボタン</th>
   </tr>
 <% @todos.each do |todo| %>
   <% if !todo.is_completed %>
@@ -24,5 +24,6 @@
   
 <% end %>
 <%= link_to 'やることの登録', new_todo_path %> |
+<%= link_to 'スタンプラリー', users_stamp_path %> |
 <%= link_to 'ポケモンガチャへ', new_pokemon_path %> |
 <%= link_to 'ポケモン一覧へ', pokemons_path %>

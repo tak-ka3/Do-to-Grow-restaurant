@@ -26,13 +26,14 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(name: name, pokemon_type: pokemon_type, img: img, user_id: current_user.id)
     
     if @pokemon.save
-      flash[:success] = '正しくポケモンが登録されました。'
+      flash[:success] = 'ポケモンをゲットできました。'
       
-      binding.pry
+      current_user.update(points: current_user.points - 10)
+      current_user.save
       
       redirect_to pokemon_path(@pokemon.id)
     else
-      flash[:danger] = 'ポケモンが登録されませんでした。'
+      flash[:danger] = 'ポケモンをゲットできませんでした。'
       redirect_to new_pokemon_path
     end
     

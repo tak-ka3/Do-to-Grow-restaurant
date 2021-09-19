@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def stamp
+    @points = current_user.points
+    @can_do = @points / 10 # ガチャを引ける回数
+  end
 end

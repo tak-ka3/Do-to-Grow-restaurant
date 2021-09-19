@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :pokemons, only: [:new, :index, :create, :show]
   root to: 'static_pages#new'
   # resources :users, only: %i[show]
+  get 'users/stamp', to: 'users#stamp'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
