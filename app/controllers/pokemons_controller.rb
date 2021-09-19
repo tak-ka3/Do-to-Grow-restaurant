@@ -39,6 +39,7 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    delete_double
   end
 
   private
@@ -64,6 +65,19 @@ class PokemonsController < ApplicationController
       rescue => exception
         retry if try < times
         false
+      end
+    end
+
+    # 被りをデータベースから削除している
+    def delete_double
+      cnt = 0
+      Pokemon.all.each do |poke|
+        if poke.name == @pokemon.name
+          cnt += 1
+        end
+      end
+      if cnt == 2
+        @pokemo.delete
       end
     end
 end
