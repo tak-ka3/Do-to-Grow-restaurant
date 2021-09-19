@@ -7,4 +7,7 @@ No. <%= @pokemon.id%>
 <h3>画像</h3>
 <%= image_tag @pokemon.img %>
 
+<% if current_user.points >= 10 %>
+  <%= link_to "もう一度引く(#{ current_user.points / 10 }回)", new_pokemon_path %>
+<% end %>
 <%= link_to 'ポケモン一覧へ', pokemons_path %>

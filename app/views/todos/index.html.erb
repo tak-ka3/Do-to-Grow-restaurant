@@ -25,5 +25,7 @@
 <% end %>
 <%= link_to 'やることの登録', new_todo_path %> |
 <%= link_to 'スタンプラリー', users_stamp_path %> |
-<%= link_to 'ポケモンガチャへ', new_pokemon_path %> |
-<%= link_to 'ポケモン一覧へ', pokemons_path %>
+<% if current_user.points >= 10 %>
+  <%= link_to "ポケモンガチャ(#{ current_user.points / 10 }回)", new_pokemon_path %> |
+<% end %>
+<%= link_to 'ポケモン一覧', pokemons_path %>
