@@ -1,12 +1,15 @@
 <h1>ゲットしたポケモン一覧</h1>
 <table class='table-set'>
   <tr>
+    <th>NO. </th>
     <th>名前</th>
     <th>タイプ</th>
     <th>画像</th>
   </tr>
 <% @pokemons.each do |poke| %>
   <tr>
+    <td><%= poke.poke_no %></td>
+
     <td><%= poke.name %></td>
 
     <td><%= poke.pokemon_type %></td>
