@@ -1,0 +1,10 @@
+<h1>今出たポケモン</h1>
+No. <%= @pokemon.id%>
+<h3>名前</h3>
+<%= @pokemon.name %>
+<h3>タイプ</h3>
+<%= @pokemon.pokemon_type %>
+<h3>画像</h3>
+<%= image_tag @pokemon.img %>
+
+<%= link_to 'ポケモン一覧へ', pokemons_path %>

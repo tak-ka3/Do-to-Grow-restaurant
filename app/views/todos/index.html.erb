@@ -1,0 +1,28 @@
+<h1>やること一覧</h1>
+<table class='table-set'>
+  <tr>
+    <th>タスク名</th>
+    <th>メモ</th>
+    <th>優先度</th>
+    <th>期日</th>
+    <th>成長ボタン</th>
+  </tr>
+<% @todos.each do |todo| %>
+  <% if !todo.is_completed %>
+    <tr>
+      <td><%= todo.task %></td>
+
+      <td><%= todo.memo %></td>
+
+      <td><%= todo.priority %></td>
+
+      <td><%= todo.due %></td>
+
+      <td><%= link_to '成長', todo_path(todo.id), method: :delete, data: { confirm: "完了しましたか？" } %></td>
+    </tr>
+  <% end %>
+  
+<% end %>
+<%= link_to 'やることの登録', new_todo_path %> |
+<%= link_to 'ポケモンガチャへ', new_pokemon_path %> |
+<%= link_to 'ポケモン一覧へ', pokemons_path %>

@@ -1,0 +1,21 @@
+<h1>やることの登録</h1>
+<%= form_with model: @todo do |f| %>
+
+  <%= f.label 'やること' %>
+  <%= f.text_field :task %>
+
+  <%= f.label 'メモ' %>
+  <%= f.text_area :memo %>
+
+  <%= f.label '優先度' %>
+  <%= f.select :priority, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]], 
+                        { include_blank: true, selected: 1}, {} %>
+
+  <%= f.label '期日' %>
+  <%= f.datetime_field :due %>
+
+  <%= f.submit '登録' %>
+<% end %>
+<br><br>
+
+<%= link_to 'やること一覧', todos_path %>

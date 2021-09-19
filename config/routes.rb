@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'users/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :todos, only: [:new, :index, :create, :destroy]
+  resources :pokemons, only: [:new, :index, :create, :show]
+  root to: 'static_pages#new'
+  # resources :users, only: %i[show]
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
 end
