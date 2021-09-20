@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .table-set{
+  margin-top: 2%;
   width: 100%;
   border-collapse:separate;
   border-spacing: 0;
+  z-index: 1;
+  position: relative;
+  table-layout: fixed;
   th:first-child{
     border-radius: 5px 0 0 0;
   }
@@ -16,13 +20,28 @@
   th{
     text-align: center;
     color:white;
-    background: linear-gradient(#cf1160, #e00be0,);
+    background: linear-gradient(#e77204, #dddb68,);
     border-left: 1px solid #54903c;
     border-top: 1px solid #54903c;
     border-bottom: 1px solid #54903c;
     box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
-    width: 6%;
+    // width: 6%;
     padding: 10px 0;
+    .width5{
+      width: 5%;
+    }
+    .width10{
+      width: 10%;
+    }
+    .width20{
+      width: 20%;
+    }
+    .width25{
+      width: 25%;
+    }
+    .width40{
+      width: 40%;
+    }
   }
   td{
     text-align: center;
@@ -30,8 +49,11 @@
     border-bottom: 1px solid #a8b7c5;
     border-top:none;
     box-shadow: 0px -3px 5px 1px #eee inset;
-    width: 6%;
+    // width: 6%;
     padding: 10px 0;
+    background-color: rgb(168, 157, 157);
+    color: black;
+    font-size: large;
   }
   td:last-child{
     border-right: 1px solid #a8b7c5;
@@ -39,4 +61,86 @@
   tr:last-child td:first-child {
     border-radius: 0 0 0 5px;
   }
+}
+
+.btn-sf-like {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(252, 245, 245);
+  text-shadow: 0 0 5px rgba(26, 19, 19, 0.73);
+  padding: 0.3em 0.5em;
+  background: #ecc207;
+  border-top: solid 3px #f3f703;
+  border-bottom: solid 3px #f3f703;
+  transition: .4s;
+  z-index: 2;
+}
+
+.btn-sf-like:hover {
+  text-shadow: -6px 0px 15px rgba(240, 244, 255, 0.83),
+               6px 0px 15px rgba(255, 255, 240, 0.83);
+}
+
+a.btn--orange {
+  color: #000;
+  background-color: #fa9a4b;
+  border-bottom: 5px solid #cc3000;
+  z-index: 2;
+  position: absolute;
+}
+
+a.btn--orange:hover {
+  margin-top: 3px;
+  color: #000;
+  background: #f77002;
+  border-bottom: 2px solid #cc3000;
+}
+
+.form-hero {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.background-photo{
+  background-image: "../images/white.png";
+}
+h2 {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem 1rem 4rem;
+  color: #fff;
+  border-radius: 100vh 0 0 100vh;
+  background: #dae907;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  color: #000;
+}
+
+h2:before {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+}
+
+.form-hero {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.todo-form {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  border: 1px solid rgb(163, 163, 163);
+  padding: 2%;
+}
+.float-item{
+  flex-basis: 50%;
 }

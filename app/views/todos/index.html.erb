@@ -1,40 +1,43 @@
-<h1>やること一覧</h1>
-<table class='table-set'>
-  <tr>
-    <th width='25%'>タスク名</th>
-    <th width='40%'>メモ</th>
-    <th width='10%'>優先度</th>
-    <th width='20%'>期日</th>
-    <th width='5%'>成長ボタン</th>
-  </tr>
-<% @todos.each do |todo| %>
-  <% if !todo.is_completed %>
+<div class="background-photo">
+  <%= image_tag "thunder.jpeg", class: "form-hero" %>
+  <h2>やること一覧</h2>
+  <%# <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div> %>
+  <table class='table-set'>
     <tr>
-      <td><%= todo.task %></td>
-
-      <td><%= todo.memo %></td>
-
-      <td><%= todo.priority %></td>
-
-      <td><%= todo.due %></td>
-
-      <td><%= link_to '成長', todo_path(todo.id), method: :delete, data: { confirm: "完了しましたか？" } %></td>
+      <th class="width25">タスク名</th>
+      <th class="width40">メモ</th>
+      <th class="width10">優先度</th>
+      <th class="width20">期日</th>
+      <th class="width5">成長ボタン</th>
     </tr>
-  <% end %>
-  
-<% end %>
-<%= link_to 'やることの登録', new_todo_path %> |
-<%= link_to 'スタンプラリー', users_stamp_path %> |
-<% if current_user.points >= 10 %>
-  <%= link_to "ポケモンガチャ(#{ current_user.points / 10 }回)", new_pokemon_path %> |
-<% end %>
-<%= link_to 'ポケモン一覧', pokemons_path %>
+  <% @todos.each do |todo| %>
+    <% if !todo.is_completed %>
+      <tr>
+        <td><%= todo.task %></td>
 
-<div class="card" style="width: 18rem;">
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect fill="#868e96" width="100%" height="100%"/><text fill="#dee2e6" dy=".3em" x="50%" y="50%">Image cap</text></svg>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <td><%= todo.memo %></td>
+
+        <td><%= todo.priority %></td>
+
+        <td><%= todo.due %></td>
+
+        <td><%= link_to '成長', todo_path(todo.id), {method: :delete, class: "btn-sf-like", data: { confirm: "完了しましたか？" }} %></td>
+      </tr>
+    <% end %>
+    
+  <% end %>
+
+  <div class="row">
+    <div class="col-md-4 text-center"><%= link_to 'やることの登録', new_todo_path, class: "btn btn--orange btn--cubic" %></div>
+    <div class="col-md-4 text-center">
+      <% if current_user.points >= 10 %>
+        <%= link_to "ガチャ(#{ current_user.points / 10 }回)", new_pokemon_path, class: "btn btn-gatya-3d" %>
+      <% else %>
+        <%= link_to "引けません", "#" %>
+      <% end %>
+    </div>
+    <div class="col-md-4 text-center"><%= link_to 'スタンプラリー', users_stamp_path, class: "btn btn--orange btn--cubic" %></div>
   </div>
 </div>

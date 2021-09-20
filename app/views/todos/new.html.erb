@@ -1,21 +1,29 @@
-<h1>やることの登録</h1>
+<h2>やることの登録</h2>
 <%= form_with model: @todo do |f| %>
+  <div class="form-template todo-form">
+    <div class="form-group float-item me-2">
+      <%= f.label 'やること' %>
+      <%= f.text_field :task, class:'form-control' %>
+    </div>
 
-  <%= f.label 'やること' %>
-  <%= f.text_field :task %>
+    <div class="form-group float-item me-2">
+      <%= f.label 'メモ' %>
+      <%= f.text_area :memo, class:'form-control' %>
+    </div>
 
-  <%= f.label 'メモ' %>
-  <%= f.text_area :memo %>
+    <div class="form-group float-item me-2">
+      <%= f.label '優先度' %>
+      <%= f.select :priority, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]], 
+                            { include_blank: true, selected: 1}, {class:'form-control'} %>
+    </div>
 
-  <%= f.label '優先度' %>
-  <%= f.select :priority, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]], 
-                        { include_blank: true, selected: 1}, {} %>
+    <div class="form-group float-item me-2">
+      <%= f.label '期日' %>
+      <%= f.datetime_field :due , class:'form-control'%>
+    </div>
 
-  <%= f.label '期日' %>
-  <%= f.datetime_field :due %>
-
-  <%= f.submit '登録' %>
+    <div class="submit-button text-center">
+      <%= f.submit '登録' , class: "btn-lg btn-warning mt-5" %>
+    </div>
+  </div>
 <% end %>
-<br><br>
-
-<%= link_to 'やること一覧', todos_path %>
