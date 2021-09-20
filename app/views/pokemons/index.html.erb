@@ -18,3 +18,38 @@
   </tr>  
 <% end %>
 <%= link_to 'やることリストに戻る', todos_path %>
+
+<div class='card-group col-md-4' style="width: 90rem;">
+  <% @pokemons.each_with_index do |poke, ind| %>
+    <div class="card animate__bounceIn" style="width: 15rem;">
+      <p class="card-text">No. <%= poke.poke_no %></p>
+      <svg class="bd-placeholder-img card-img-top" width="50" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+        <title>Pokemon</title>
+        <%= image_tag poke.img %>
+      </svg>
+      <div class="card-body text-center">
+        <h5 class="card-title"><%= poke.name %></h5>
+        <p class="card-text">Type: <%= poke.pokemon_type %></p>
+        <%= link_to 'ポケモン一覧', pokemons_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <% if (ind+1) % 6 == 0 %>
+      <div class="w-100"></div>
+    <% end %>
+  <% end %>
+  <% if (@pokemons.count % 6) != 0%>
+    <% (6 - @pokemons.count % 6).times do |card| %>
+      <div class="card animate__bounceIn" style="width: 15rem;">
+        <svg class="bd-placeholder-img card-img-top" width="50" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+          <title>Pokemon</title>
+          <%= image_tag 'white2.jpeg' %>
+        </svg>
+        <div class="card-body text-center">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
