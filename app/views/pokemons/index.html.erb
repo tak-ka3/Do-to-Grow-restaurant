@@ -1,22 +1,4 @@
-<h2>ゲットしたポケモン一覧</h2>
-<table class='table-set'>
-  <tr>
-    <th>NO. </th>
-    <th>名前</th>
-    <th>タイプ</th>
-    <th>画像</th>
-  </tr>
-<% @pokemons.each do |poke| %>
-  <tr>
-    <td><%= poke.poke_no %></td>
-
-    <td><%= poke.name %></td>
-
-    <td><%= poke.pokemon_type %></td>
-    
-    <td><%= image_tag poke.img %></td>
-  </tr>  
-<% end %>
+<h2>ゲットしたポケモン</h2>
 <div class='card-group col-md-4' style="width: 90rem;">
   <% @pokemons.each_with_index do |poke, ind| %>
     <div class="card animate__bounceIn" style="width: 15rem;">

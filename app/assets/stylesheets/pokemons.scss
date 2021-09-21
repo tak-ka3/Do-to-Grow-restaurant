@@ -6,9 +6,9 @@
   text-decoration: none;
   background: #eef105;
   color: rgb(235, 74, 10);
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
+  width: 180px;
+  height: 180px;
+  line-height: 180px;
   border-radius: 50%;
   text-align: center;
   font-weight: bold;
@@ -25,4 +25,58 @@
   transform: translateY(2px);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   border-bottom: none;
+}
+.my-circle{
+  position: relative;
+  top: 100px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 100px;
+  animation: right 2s .3s ease-out infinite alternate;
+}
+.move-right{
+  animation: right 8s .10s ease-out infinite alternate;
+}
+.move-left{
+  animation: left 8s .12s ease-out infinite alternate;
+}
+.move-top{
+  animation: top 2s .3s ease-out infinite alternate;
+}
+.move-bottom{
+  animation: bottom 8s .12s ease-out infinite alternate;
+}
+@keyframes right{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(60%);
+  }
+}
+@keyframes left{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(40%);
+  }
+}
+@keyframes top{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(40%);
+  }
+}
+@keyframes bottom{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(50%);
+  }
 }

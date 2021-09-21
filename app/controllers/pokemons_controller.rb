@@ -28,7 +28,6 @@ class PokemonsController < ApplicationController
         
         current_user.update(points: current_user.points - 10)
         current_user.save
-        
         redirect_to pokemon_path(@pokemon.id)
       else
         flash[:danger] = 'ポケモンをゲットできませんでした。'
