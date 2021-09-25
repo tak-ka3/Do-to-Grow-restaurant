@@ -1,5 +1,5 @@
 # README
-
+- migrateの時点で、[データベースにデータを入れる](https://qiita.com/mHadate/items/bc698ce5c126c932487e)
 
 ## createアクション周辺(resources)
 1. 最初にnew_pokemon_path(/pokemons/new)に相当するnewアクションで、formを作る。
@@ -10,3 +10,10 @@
 1. jpegが使えないので、jpgに名前を変更しておく。
 2. ログを見れば大体どこがエラーになっているかわかる。
 3. rubyは最新版のものを使わないとエラーになる。
+
+## エラー
+- `Webpacker can't find application`というエラーが出た時は、以下を実行すれば良い。
+```ruby
+rails webpacker:install
+rails webpacker:compile
+```

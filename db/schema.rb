@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_19_090405) do
+ActiveRecord::Schema.define(version: 2021_09_25_044024) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(version: 2021_09_19_090405) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "poke_no"
     t.index ["user_id"], name: "index_pokemons_on_user_id"
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.string "p_id"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "budget"
+    t.string "address"
+    t.string "catch"
+    t.string "photo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
   create_table "todos", force: :cascade do |t|
@@ -45,10 +65,12 @@ ActiveRecord::Schema.define(version: 2021_09_19_090405) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
     t.integer "points", default: 0, null: false
+    t.string "prefecture", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "pokemons", "users"
+  add_foreign_key "restaurants", "users"
   add_foreign_key "todos", "users"
 end

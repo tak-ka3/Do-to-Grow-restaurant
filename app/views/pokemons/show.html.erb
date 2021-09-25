@@ -1,19 +1,21 @@
-<h2>ゲットしたポケモン</h2>
+<h2>取得した飲食店</h2>
 <% if current_user.points >= 10 %>
   <div class="text-right">
     <%= link_to "もう一度引く(#{ current_user.points / 10 }回)", new_pokemon_path,  class: "btn btn-warning m-4" %>
   </div>
 <% end %>
 
-<div class="card mx-auto animate__bounceIn" style="width: 18rem;">
-  <p class="card-text">No. <%= @pokemon.poke_no %></p>
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
-    <title>Pokemon</title>
-    <%= image_tag @pokemon.img %>
+<div class="card mx-auto animate__bounceIn" style="width: 35%;">
+  <svg class="bd-placeholder-img card-img-top" width="100%" height="2%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
+    <title>Restaurant</title>
+    <%= image_tag @restaurant.photo %>
   </svg>
   <div class="card-body text-center">
-    <h5 class="card-title"><%= @pokemon.name %></h5>
-    <p class="card-text">Type: <%= @pokemon.pokemon_type %></p>
-    <%= link_to 'ポケモン一覧', pokemons_path, class: 'btn btn-primary' %>
+    <h5 class="card-title"><%= @restaurant.name %></h5>
+    <p class="card-text">ジャンル: <%= @restaurant.genre %></p>
+    <p class="card-text">予算: <%= @restaurant.budget %></p>
+    <p class="card-text">住所: <%= @restaurant.address %></p>
+    <p class="card-text">メッセージ: <%= @restaurant["catch"] %></p>
+    <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-primary' %>
   </div>
 </div>
