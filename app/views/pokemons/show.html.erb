@@ -5,18 +5,18 @@
   </div>
 <% end %>
 
-<div class="card mx-auto animate__bounceIn" style="width: 35%;">
+<div class="card mx-auto animate__bounceIn" style="width: 30%;">
   <svg class="bd-placeholder-img card-img-top" width="100%" height="2%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap">
     <title>Restaurant</title>
     <%= image_tag @restaurant.photo %>
   </svg>
-  <div class="card-body text-center">
-    <h5 class="card-title"><%= @restaurant.name %></h5>
-    <p class="card-text">ジャンル: <%= @restaurant.genre %></p>
-    <p class="card-text">予算: <%= @restaurant.budget %></p>
-    <p class="card-text">住所: <%= @restaurant.address %></p>
-    <p class="card-text">メッセージ: <%= @restaurant["catch"] %></p>
+  <div class="card-body">
+    <h5 class="card-title text-danger fw-bold"><%= @restaurant.name %></h5>
+    <p class="card-text"><label class="fw-bold">ジャンル: </label> <%= @restaurant.genre %></p>
+    <p class="card-text"><label class="fw-bold">予算: </label> <%= @restaurant.budget %></p>
+    <p class="card-text"><label class="fw-bold">住所: </label> <%= @restaurant.address %></p>
+    <p class="card-text"><label class="fw-bold">メッセージ: </label> <%= @restaurant["catch"] %></p>
     <p><%= link_to "店舗詳細URL", @restaurant.url, target: :_blank %></p>
-    <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-primary' %>
+    <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-warning' %>
   </div>
 </div>

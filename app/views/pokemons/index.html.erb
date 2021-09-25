@@ -6,14 +6,13 @@
         <title>Restaurant</title>
         <%= image_tag res.photo %>
       </svg>
-      <div class="card-body text-center">
-        <h5 class="card-title"><%= res.name %></h5>
-        <p class="card-text">ジャンル: <%= res.genre %></p>
-        <p class="card-text">予算: <%= res.budget %></p>
-        <p class="card-text">住所: <%= res.address %></p>
-        <p class="card-text">メッセージ: <%= res["catch"] %></p>
+      <div class="card-body">
+        <h5 class="card-title text-danger fw-bold"><%= res.name %></h5>
+        <p class="card-text"><label class="fw-bold">ジャンル: </label> <%= res.genre %></p>
+        <p class="card-text"><label class="fw-bold">予算: </label> <%= res.budget %></p>
+        <p class="card-text"><label class="fw-bold">住所: </label> <%= res.address %></p>
+        <p class="card-text"><label class="fw-bold">メッセージ: </label> <%= res["catch"] %></p>
         <p><%= link_to "店舗詳細URL", res.url, target: :_blank %></p>
-        <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-primary' %>
       </div>
     </div>
     <% if (ind+1) % 6 == 0 %>

@@ -1,9 +1,5 @@
 <div class="background-photo">
-  <%= image_tag "thunder.jpg", class: "form-hero" %>
-  <h2>やること一覧</h2>
-  <%# <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div> %>
+  <h2>伸び代一覧</h2>
   <table class='table-set'>
     <tr>
       <th class="width25">タスク名</th>
@@ -35,7 +31,7 @@
       <% if current_user.points >= 10 %>
         <%= link_to "ガチャ(#{ current_user.points / 10 }回)", new_pokemon_path, class: "btn btn-gatya-3d" %>
       <% else %>
-        <%= link_to "引けません", "#" %>
+        <p>ガチャには<%= 10 - current_user.points %>ポイント足りません。</p>
       <% end %>
     </div>
     <div class="col-md-4 text-center"><%= link_to 'スタンプラリー', users_stamp_path, class: "btn btn--orange btn--cubic" %></div>

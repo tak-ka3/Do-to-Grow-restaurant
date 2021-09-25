@@ -25,10 +25,10 @@ class TodosController < ApplicationController
     current_user.update(points: current_user.points + todo.priority)
     if current_user.save
       if todo.destroy
-        flash[:success] = '正しく削除されました。'
+        flash[:success] = 'また一つレベルアップしました。'
         redirect_to todos_path
       else
-        flash[:danger] = '削除されませんでした。'
+        flash[:danger] = 'レベルアップしませんでした。'
         redirect_to todos_path
       end
     else

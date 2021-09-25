@@ -3,7 +3,7 @@
   <div>
     <%= link_to "ガチャを引く", pokemons_path, {method: :post, class: 'btn-gatya-3d'} %>
   </div>
-  <h3 class="mt-3">あなたはあと<%= current_user.points / 10 %>回引けます</h3>
+  <h3 class="mt-3 fw-bold">あなたはあと<p class=text-danger><%= current_user.points / 10 %>回</p>引けます</h3>
 </div>
 <% if Pokemon.count > 0 %>
   <% rand_int = rand(1..Pokemon.all.count) %>

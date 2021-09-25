@@ -1,4 +1,15 @@
-<h1>Do-To-Grow</h1>
-<h2>HOME画面</h2>
-<%= link_to 'サインイン', new_user_session_path %>
-<%= link_to '登録する', new_user_registration_path %>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container center-set">
+  <div class="d-flex align-items-center justify-content-center" style="height:300px;">
+    <h1 class="display-1 fw-bold">Do-To-Grow</h1>
+  </div>
+  <div class="mx-auto" style="width: 350px">
+    <p class="fs-5">これはタスクをこなすためのアプリではありません。</p><br>
+    <p class="fs-5"><label class="text-danger fw-bold">「成長」</label>するためのアプリです。</p>
+  </div>
+  <div class="mt-5">
+    <%= link_to '登録する', new_user_registration_path, class:'btn-lg fw-bold btn-danger p-3 text-decoration-none' %>
+  </div>
+</div>
