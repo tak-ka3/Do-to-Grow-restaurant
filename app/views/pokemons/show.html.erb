@@ -16,6 +16,7 @@
     <p class="card-text">予算: <%= @restaurant.budget %></p>
     <p class="card-text">住所: <%= @restaurant.address %></p>
     <p class="card-text">メッセージ: <%= @restaurant["catch"] %></p>
+    <p><%= link_to "店舗URL", @restaurant.url, target: :_blank %></p>
     <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-primary' %>
   </div>
 </div>

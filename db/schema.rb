@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_25_044024) do
+ActiveRecord::Schema.define(version: 2021_09_25_082831) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_044024) do
   create_table "prefectures", force: :cascade do |t|
     t.string "p_id"
     t.string "name"
+    t.integer "num"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_09_25_044024) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.string "url"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 

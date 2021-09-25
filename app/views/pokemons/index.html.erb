@@ -12,6 +12,7 @@
         <p class="card-text">予算: <%= res.budget %></p>
         <p class="card-text">住所: <%= res.address %></p>
         <p class="card-text">メッセージ: <%= res["catch"] %></p>
+        <p><%= link_to "店舗URL", res.url, target: :_blank %></p>
         <%= link_to '飲食店一覧', pokemons_path, class: 'btn btn-primary' %>
       </div>
     </div>

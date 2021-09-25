@@ -13,7 +13,8 @@ response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") d
   http.get(uri.request_uri)
 end
 @result = JSON.parse(response.body)["results"]
-@shops = result["shop"]
+p @result["results_available"]
+@shops = @result["shop"]
 
 p shops.size
 
