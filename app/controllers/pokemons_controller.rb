@@ -4,7 +4,7 @@ class PokemonsController < ApplicationController
   end
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.where(user_id: current_user.id)
   end
 
   def create

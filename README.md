@@ -21,3 +21,6 @@
 rails webpacker:install
 rails webpacker:compile
 ```
+- background-imageはそのまま、`background-image: url("growth.jpg");`でやるとエラーが出るので、以下の手順を踏むべき。
+1. background-imageを書く場所をcssではなく、scssファイルにする。
+2. `background-image: image-url("growth.jpg");`のように書く。

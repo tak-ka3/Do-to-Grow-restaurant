@@ -17,7 +17,8 @@ class TodosController < ApplicationController
   end
 
   def index
-    @todos = Todo.all
+    @todos = Todo.order("due")
+    @todos = @todos.where(user_id: current_user.id)
   end
 
   def destroy
