@@ -17,14 +17,6 @@
   height:100%;
 }
 
-body {
-  margin:0;
-  /* background-color: #acb8c4; */
-  background: image-url("growth.jpg");
-  background-size: cover;
-  font-family:'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-}
-
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
   background-image: linear-gradient(-60deg, rgb(228, 224, 18) 50%, rgb(255, 102, 0) 50%);
