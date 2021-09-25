@@ -20,7 +20,7 @@
 body {
   margin:0;
   /* background-color: #acb8c4; */
-  background-image: url("images/growth.jpg");
+  background-image: image-url("growth.jpg");
   background-size: cover;
   font-family:'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
