@@ -11,6 +11,9 @@
 2. ログを見れば大体どこがエラーになっているかわかる。
 3. rubyは最新版のものを使わないとエラーになる。
 - `heroku run rails db:migrate`を最初に実行するのも忘れない！
+- データベースのリセットの方法
+1. `heroku pg:reset -a do-to-grow`を実行。
+2. `heroku run rails db:migrate`を実行。
 
 ## API
 1. APIを一回で取り出すデータの数を指定できることも。
