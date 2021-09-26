@@ -1,4 +1,4 @@
-# Do-To-Grow
+# Do-To-Grow(技育展登壇作品, 2021/09/26)
 
 ![LandingPage](app/assets/images/landingpage.png "ランディングページ")  
 ![TaskList](app/assets/images/task_list.png "伸び代一覧")  
