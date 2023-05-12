@@ -13,7 +13,7 @@
 ## URL集
 - [アプリケーション](https://togrowapp.herokuapp.com/)
 - [デモ動画](https://drive.google.com/file/d/1y_IJLWq4QACGayd379j3wbZ4fg1MkGjC/view?usp=sharing)
-
+- [スライド](https://docs.google.com/presentation/d/1CBEV7IaV2TpT5YBw6qgpAzzLyVHgNJUAtdVMTn_o19M/edit?usp=sharing)
 
 
 ## 技術的な学び
