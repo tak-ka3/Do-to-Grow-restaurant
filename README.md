@@ -11,7 +11,7 @@
 - ガチャで出た飲食店は、自分のコレクションとして貯めておくことができる。
 
 ## URL集
-- [アプリケーション](https://do-to-grow.herokuapp.com/)
+- [アプリケーション](https://togrowapp.herokuapp.com/)
 - [デモ動画](https://drive.google.com/file/d/1y_IJLWq4QACGayd379j3wbZ4fg1MkGjC/view?usp=sharing)
 
 
